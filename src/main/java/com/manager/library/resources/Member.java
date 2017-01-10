@@ -1,20 +1,18 @@
 package com.manager.library.resources;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-import org.hibernate.annotations.CreationTimestamp;
+
+import java.math.BigInteger;
+
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 public class Member {
-
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int memberId;
+	private BigInteger memberId;
 
 	private char memberType;
 	private String memberName;
@@ -25,11 +23,11 @@ public class Member {
 	
 	private String emailId;
 
-	public int getMemberId() {
+	public BigInteger getMemberId() {
 		return memberId;
 	}
 
-	public void setMemberId(int memberId) {
+	public void setMemberId(BigInteger memberId) {
 		this.memberId = memberId;
 	}
 

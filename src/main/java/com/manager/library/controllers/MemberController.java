@@ -24,6 +24,12 @@ public class MemberController {
 		memberService.addMember(member);
 	}
 
+	@RequestMapping(method = RequestMethod.PUT , value = "/updateMember")
+	public void updateMember(@RequestBody Member member)
+	{
+		memberService.updateMember(member);
+	}
+
 	@RequestMapping(method = RequestMethod.GET , value = "/getMember/{id}")
 	public Member getMember(@PathVariable int id)
 	{
@@ -35,5 +41,11 @@ public class MemberController {
 	{
 		return memberService.getMemberList();
 	}
-	
+
+	@RequestMapping(method = RequestMethod.GET , value = "/deleteMember/{id}")
+	public void deleteMember(@PathVariable int id)
+	{
+		memberService.deleteMember(id);
+	}
+
 }
